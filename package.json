@@ -1,0 +1,30 @@
+{
+  "name": "react-native-pop-menu",
+  "version": "0.0.6",
+  "description": "A popup menu component for Android and iOS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:liuyanhongwl/react-native-pop-menu.git"
+  },
+  "keywords": [
+    "react-native",
+    "react",
+    "menu",
+    "popup",
+    "react-component"
+  ],
+  "author": "liuyanhongwl (https://github.com/liuyanhongwl)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liuyanhongwl/react-native-menu/issues"
+  },
+  "homepage": "https://github.com/liuyanhongwl/react-native-menu#readme",
+  "dependencies": {
+    "prop-types": "^15.6.0"
+  },
+  "devDependencies": {}
+}
