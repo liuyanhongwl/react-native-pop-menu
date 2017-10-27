@@ -2,13 +2,7 @@
 
 A popup menu component for Android and iOS.
 
-<img src="demo.gif" style="width:245; height:435;">
-
-and we can config the arrow position
-
-<img src="center.png" style="width:245; height:435;">
-
-<img src="left.png" style="width:245; height:435;">
+<img src="demo.gif" width="327" height="581">
 
 ### Installation
 
