@@ -28,56 +28,78 @@ export default class App extends Component {
 
     this.state = {
       menuVisible: false,
+      arrowPosition: 'topRight',
+      left: 12,
+      right: undefined,
       color: '#F5FCFF',
-      title: 'To get started, edit App.js'
+      title: 'Welcome to React Native!'
     }
   }
 
   render() {
-
-    const menuData = [
-      {
-        title: 'MenuItem 1',
-        onPress: () => {
-          this.setState({
-            color: 'skyblue'
-          });
-        }
-      },
-      {
-        title: 'MenuItem 2',
-        onPress: () => {
-          this.setState({
-            title: 'Easy to use menu ~~~'
-          });
-        }
-      },
-    ];
-
     return (
       <View style={[styles.container, { backgroundColor: this.state.color }]}>
+        <TouchableOpacity style={{ position: 'absolute', left: 12, top: 32 }}
+                          onPress={() => {
+                            this.setState({
+                              menuVisible: true,
+                              arrowPosition: 'topLeft',
+                              left: 12,
+                              right: undefined,
+                            });
+                          }}>
+          <Text>Menu</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={{ position: 'absolute', left: 150, top: 32 }}
+                          onPress={() => {
+                            this.setState({
+                              menuVisible: true,
+                              arrowPosition: 'topCenter',
+                              left: 110,
+                              right: undefined,
+                            });
+                          }}>
+          <Text>Menu</Text>
+        </TouchableOpacity>
         <TouchableOpacity style={{ position: 'absolute', right: 12, top: 32 }}
                           onPress={() => {
                             this.setState({
-                              menuVisible: true
+                              menuVisible: true,
+                              arrowPosition: 'topRight',
+                              left: undefined,
+                              right: 12,
                             });
                           }}>
           <Text>Menu</Text>
         </TouchableOpacity>
         <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
           {this.state.title}
         </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
         <Menu visible={this.state.menuVisible}
-              data={menuData}
               onVisible={(isVisible) => {
                 this.state.menuVisible = isVisible
-              }} />
+              }}
+              left={this.state.left}
+              right={this.state.right}
+              arrowPosition={this.state.arrowPosition}
+              data={[
+                {
+                  title: 'MenuItem 1',
+                  onPress: () => {
+                    this.setState({
+                      color: 'skyblue'
+                    });
+                  }
+                },
+                {
+                  title: 'MenuItem 2',
+                  onPress: () => {
+                    this.setState({
+                      title: 'Hello react-native-pop-menu!'
+                    });
+                  }
+                },
+              ]} />
       </View>
     );
   }
