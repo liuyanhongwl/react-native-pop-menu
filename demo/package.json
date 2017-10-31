@@ -9,7 +9,7 @@
 	"dependencies": {
 		"react": "16.0.0",
 		"react-native": "0.49.3",
-		"react-native-pop-menu": "0.0.6"
+		"react-native-pop-menu": "0.0.8"
 	},
 	"devDependencies": {
 		"babel-jest": "21.2.0",

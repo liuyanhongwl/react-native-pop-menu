@@ -1,3 +1,5 @@
+[![npm](https://img.shields.io/npm/v/npm.svg?style=flat-square)](https://www.npmjs.com/package/react-native-pop-menu)
+
 ## react-native-pop-menu
 
 A popup menu component for Android and iOS.

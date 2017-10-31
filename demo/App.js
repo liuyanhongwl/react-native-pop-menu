@@ -99,7 +99,8 @@ export default class App extends Component {
                     });
                   }
                 },
-              ]} />
+              ]}
+              contentStyle={{backgroundColor: 'teal'}}/>
       </View>
     );
   }

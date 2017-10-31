@@ -3,12 +3,14 @@ import {
   Modal,
   View,
   Text,
-  Image,
   TouchableOpacity,
   TouchableWithoutFeedback,
   StyleSheet,
 } from 'react-native'
 import PropTypes from 'prop-types'
+
+const StyleSheetPropType = require('StyleSheetPropType');
+const ViewStylePropTypes = require('ViewStylePropTypes');
 
 export default class Menu extends React.PureComponent {
 
@@ -23,11 +25,15 @@ export default class Menu extends React.PureComponent {
     visible: PropTypes.bool,
     arrowPosition: PropTypes.oneOf(['topRight', 'topLeft', 'topCenter']),
     onVisible: PropTypes.func.isRequired,
+    contentStyle: StyleSheetPropType(ViewStylePropTypes),
   }
 
   static defaultProps = {
     top: 74,
     arrowPosition: 'topRight',
+    contentStyle: {
+      backgroundColor: '#4A4A4A',
+    }
   }
 
   constructor(props) {
@@ -74,7 +80,7 @@ export default class Menu extends React.PureComponent {
   }
 
   renderContent = () => {
-    const { data, arrowPosition, left } = this.props
+    const { data, arrowPosition, left, contentStyle } = this.props
     let { top, right } = this.props
     if (!right && !left) {
       right = 12
@@ -98,14 +104,13 @@ export default class Menu extends React.PureComponent {
 
     return (
       <View style={{ flex: 1 }}>
-        <Image
-          style={{
-            position: 'absolute',
-            top: top - arrowSize,
-            left: arrowLeft,
-          }}
-          source={require('./assets/images/menu_arrow.png')} />
-        <View style={[styles.content, { top, right, left }]}
+        <View style={[styles.arrow, {
+          position: 'absolute',
+          top: top - arrowSize,
+          left: arrowLeft,
+          borderBottomColor: contentStyle.backgroundColor,
+        }]} />
+        <View style={[styles.content, contentStyle, { top, right, left }]}
               onLayout={({ nativeEvent: { layout } }) => {
                 this.setState({ itemLayout: layout })
               }}>
@@ -135,11 +140,9 @@ export default class Menu extends React.PureComponent {
   }
 }
 
-
 const styles = StyleSheet.create({
   content: {
     position: 'absolute',
-    backgroundColor: '#4A4A4A',
     borderRadius: 2,
     alignItems: 'center',
     overflow: 'hidden'
@@ -163,4 +166,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 19,
     paddingVertical: 11,
   },
+  arrow: {
+    width: 0,
+    height: 0,
+    borderStyle: 'solid',
+    borderBottomWidth: 7,
+    borderLeftWidth: 5,
+    borderRightWidth: 5,
+    borderTopWidth: 3,
+    borderTopColor: '#f000',//下箭头颜色
+    borderLeftColor: '#0f00',//右箭头颜色
+    borderRightColor: '#00f0'//左箭头颜色
+  }
 })
