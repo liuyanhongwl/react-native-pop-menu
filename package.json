@@ -1,6 +1,6 @@
 {
   "name": "react-native-pop-menu",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A popup menu component for Android and iOS",
   "main": "index.js",
   "scripts": {
