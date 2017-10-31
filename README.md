@@ -76,4 +76,5 @@ Props:
 |visible|Bool|Determines whether your Menu is visible|true|
 |onVisible|Function|The 'onVisible' callback is called when the Menu's visible changed|undefined|
 |arrowPosition|String|Menu arrow's position, one of 'topRight', 'topLeft', 'topCenter'|'topRight'|
+|contentStyle|View.propTypes.style|Edit the Menu's style|{ backgroundColor: defaultColor }|
 
