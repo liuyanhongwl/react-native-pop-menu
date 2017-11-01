@@ -1,4 +1,6 @@
-[![npm](https://img.shields.io/npm/v/npm.svg?style=flat-square)](https://www.npmjs.com/package/react-native-pop-menu)
+[![npm](https://img.shields.io/npm/v/react-native-pop-menu.svg)](https://www.npmjs.com/package/react-native-pop-menu)
+[![npm](https://img.shields.io/npm/dm/react-native-pop-menu.svg)](https://www.npmjs.com/package/react-native-pop-menu)
+[![npm](https://img.shields.io/npm/l/react-native-pop-menu.svg)]()
 
 ## react-native-pop-menu
 
@@ -76,5 +78,5 @@ Props:
 |visible|Bool|Determines whether your Menu is visible|true|
 |onVisible|Function|The 'onVisible' callback is called when the Menu's visible changed|undefined|
 |arrowPosition|String|Menu arrow's position, one of 'topRight', 'topLeft', 'topCenter'|'topRight'|
-|contentStyle|View.propTypes.style|Edit the Menu's style|{ backgroundColor: defaultColor }|
+|contentStyle|View.propTypes.style|Edit the Menu's stylecd|{ backgroundColor: defaultColor }|
 
