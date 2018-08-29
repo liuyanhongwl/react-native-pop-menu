@@ -8,6 +8,7 @@ import {
   StyleSheet,
 } from 'react-native'
 import PropTypes from 'prop-types'
+import ViewPropTypes from './ViewPropTypes'
 
 export default class Menu extends React.PureComponent {
 
@@ -22,7 +23,7 @@ export default class Menu extends React.PureComponent {
     visible: PropTypes.bool,
     arrowPosition: PropTypes.oneOf(['topRight', 'topLeft', 'topCenter']),
     onVisible: PropTypes.func.isRequired,
-    contentStyle: View.propTypes.style,
+    contentStyle: ViewPropTypes.style,
   }
 
   static defaultProps = {
